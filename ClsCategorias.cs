@@ -10,16 +10,13 @@ namespace UHExamen1
    
     internal class ClsCategorias
     {
-
-        List<int> categorias = new List<int>();
-        
-        public void listadoCategorioas()
+        static int numero;
+        List<int> categorias = new List<int>()
         {
-            categorias.Add(1);
-            categorias.Add(2);
-            categorias.Add(3);
-
-        }
+            1,
+            2,
+            3,
+        };
 
 
 
@@ -27,12 +24,23 @@ namespace UHExamen1
         {
 
         }
-        public void listadoCategorias()
-        {
 
-        }
-        public bool existeCategoria(int numero)
+        public void listaCategorias()
         {
+            Console.WriteLine($"Lista de Categorias: ");
+            foreach (var item in categorias)
+            {
+            Console.WriteLine($"Categoria: {item}");    
+            }
+            Console.WriteLine();
+}
+
+
+        public bool existeCategoria()
+        {
+            Console.WriteLine("Ingrese la categoria que desea consultar: ");
+            numero = int.Parse(Console.ReadLine());
+
             if (categorias.Contains(numero))
             {
                 Console.WriteLine($"La categoria {numero}");

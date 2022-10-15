@@ -8,9 +8,11 @@ namespace UHExamen1
 {
     internal class ClsVendedor1 : ClsVendedores, ClsInterfaces.Ivendedor1
     {
+        private string nombre { get; set; }
+
         public ClsVendedor1(string nombre)
         {
-            nombre = "Pedro"; 
+            this.nombre = "Pedro";
         }
 
         public void ventasContado()

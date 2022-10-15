@@ -9,7 +9,7 @@ namespace UHExamen1
     internal class ClsVendedores
     {
         public string nombre { get; set; }
-
+        static int codVendedor;
         public ClsVendedores() { }
 
 
@@ -25,19 +25,24 @@ namespace UHExamen1
             {
                 Console.WriteLine($"Codigo Vendedor {item.Key} nombre {item.Value}");
             }
+            Console.WriteLine("\n");    
         }
 
-        public static string consultaVendedor(int codVendedor)
-        {                
-            if (listaVendedores.TryGetValue(codVendedor, out string resultado))
-            {
-                return "nombre del vendedor es" + resultado;
-            }
-            else
-            {
-                return "No existe el venderor";
-            }
+        public string consultaVendedor()
+        {
+            
+                Console.WriteLine("Ingrese el codigo del Vendedor");
+                codVendedor = int.Parse(Console.ReadLine());
+                if (listaVendedores.TryGetValue(codVendedor, out string resultado))
+                {
+                    return "El bombre del vendedor es " + resultado + "\n";
+                }
+                else
+                {
+                    return "No existe el venderor \n";
+                }
             
         }
+        
     }
 }

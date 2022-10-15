@@ -70,7 +70,7 @@ namespace UHExamen1
         public void verArticulos()
         {
             Console.WriteLine("Detalles de los articulos:\n");
-            for (x = 0; x < num; x++)
+            for (x = 0; x < listaArticulos.Length; x++)
             {
                 Console.WriteLine($"Codigo: {listaArticulos[x].codigo} Precio: {listaArticulos[x].precio} Nombre: {listaArticulos[x].nombre}");
             }
@@ -86,7 +86,7 @@ namespace UHExamen1
                 if (listaArticulos[x].codigo == opcion)
                 {
                     Console.WriteLine($"Detalles del producto. \nPrecio: {listaArticulos[x].precio} \nNombre: {listaArticulos[x].nombre}");
-                    Console.WriteLine("\nCuantos deses adquirir");
+                    Console.WriteLine("\nCuantos desea adquirir");
                     opcion = int.Parse(Console.ReadLine());
                     total = opcion * listaArticulos[x].precio;
                     Console.WriteLine($"\nEl total a cancelar es {total}");
